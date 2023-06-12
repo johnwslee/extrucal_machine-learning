@@ -34,9 +34,5 @@ def mean_std_cross_val_scores(model, X_train, y_train, **kwargs):
 
 
 def mape(true, pred):
-    try:
-        mape = 100.0 * np.mean(np.abs((pred - true) / (true)))
-    except ZeroDivisionError:
-        mape = 100.0 * np.mean(np.abs((pred - true) / (true + 0.1)))
-
+    mape = 100.0 * np.mean(np.abs((pred - true) / (true + 0.1)))
     return mape
