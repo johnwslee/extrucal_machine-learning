@@ -3,10 +3,6 @@ import pandas as pd
 import numpy as np
 
 
-def safe_log(value):
-    return np.log(value + 1)
-
-
 def mean_std_cross_val_scores(model, X_train, y_train, **kwargs):
     """
     Returns mean and std of cross validation
