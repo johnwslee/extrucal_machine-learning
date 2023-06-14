@@ -9,15 +9,9 @@ status](https://img.shields.io/github/license/johnwslee/extrucal_machine-learnin
 
 This study was motivated from a simple question, "Can a trained machine learning model perform as well as an analytical solution?". In order to find out, this study was carried out using data in the field of polymer extrusion processes. 
 
-First, in order to prepare a dataset for machine learning, throughput data were generated using [extrucal](https://github.com/johnwslee/extrucal) library with various extruder size, screw geometries, polymer melt density, and screw RPMs.
+First, in order to prepare a dataset for machine learning, throughput data was generated using [extrucal](https://github.com/johnwslee/extrucal) library with various extruder size, screw geometries, polymer melt density, and screw RPMs. Then, basic exploratory data analysis was performed to check on the distribution of features and target, and log transformation was applied to the skewed ones. With the transformed data, cross-validation was carried out using multiple machine learning models, and the best model was selected based on the cross-validation score, which was based on `mean_squared_error`. Once the best model was chosen, hyperparameter optimization was performed, and the performance of the selected machine learning model before and after optimization were compared for the extruders with the size ranging from 25 mm to 250 mm. The evaluation of the model's performance revealed significant disparities between the throughputs predicted by machine learning model and the analytical solution, [extrucal](https://github.com/johnwslee/extrucal) for certain extruder sizes. The followings are the summarized report of this study, and actual codes used for this study can be found in [notebook folder](https://github.com/johnwslee/extrucal_machine-learning/tree/main/notebooks).
 
-Second, basic exploratory data analysis was performed to check on the distribution of features and target, and log transformation was applied to the skewed features and target.
-
-Third, cross-validation was carried out using multiple machine learning models, and the best model was selected based on the cross-validation score, which was `mean_squared_error`.
-
-Fourth, hyperparameter optimization was performed for the selected machine learning model, and performance of the model before and after optimization were compared for the extruders with the size ranging from 25 mm to 250 mm.
-
-## Approaches
+## Summary of Study
 
 ### 1. Generation of Data
 
