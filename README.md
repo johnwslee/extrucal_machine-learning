@@ -75,7 +75,7 @@ The `CatBoostRegressor` model was trained with `extruder_size` in the range from
 
 There are clear disparities between the throughputs predicted by the model and those by the analytical solution(i.e. by `extrucal` library) for the `extruder_size` that were not in the Train Data. The disparity was bigger for the smallest extruder(i.e. 25mm) maybe because its throughputs were order of magnitude smaller than other sizes, and `mean_squared_error` was used as the evaluation metric. On the other hand, the predicted throughputs predicted for the `extruder_size` that were in the Train Data were almost identical to those calculated by the analytical solution(i.e. by `extrucal` library).
 
-When the two cases were compared using `mean_absolute_percentage_error`, it was 1.33% for the `extruder_size` present in Train Data, whereas it was 6.67% for the `extruder_size` that were not in Train Data.
+When the two cases were compared using `mean_absolute_percentage_error`, it was 1.14% for the `extruder_size` present in Train Data, whereas it was 6.92% for the `extruder_size` that were not in Train Data.
 
 ## 3. Conclusion
 
