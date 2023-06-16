@@ -91,8 +91,8 @@ To download the contents of this GitHub page on to your local machine, follow th
 
 2. On your terminal, type: `cd extrucal_machine-learning`.
 
-3. To run a development instance locally, first create a virtualenv by typing: `conda env create -f env.yml`
+3. Create a virtualenv by typing: `conda env create -f env.yml`
 
-4. Type the following command to activate the virtualenv: `conda activate extrucal_ml`
+4. Activate the virtualenv by typing: `conda activate extrucal_ml`
 
 5. Run the notebooks in notebook folder in order.
