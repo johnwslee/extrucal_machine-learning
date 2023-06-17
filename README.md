@@ -41,7 +41,7 @@ The target, throughput, also showed a strong skewness as shown below. Therefore 
 
 <img src="https://github.com/johnwslee/extrucal_machine-learning/blob/main/img/distribution_of_target.png" style="width:400px;height:300px;background-color:white">
 
-After log-transformation of the target, the skewness disappeared. However, since there were many zero throughput data for the screw RPM of zero, there was a peak in the graph as shown below.
+After log-transformation of the target, the skewness disappeared. However, since there were many zero throughput data for the screw RPM of zero, there was a sharp peak in the graph as shown below.
 
 <img src="https://github.com/johnwslee/extrucal_machine-learning/blob/main/img/distribution_of_log_target.png" style="width:400px;height:300px;background-color:white">
 
