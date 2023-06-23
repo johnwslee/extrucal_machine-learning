@@ -83,13 +83,13 @@ In order to find out if the machine learning model correctly learned the effect 
 
 - #### Rank of Features
 
-<img src="https://github.com/johnwslee/extrucal_machine-learning/blob/main/img/feature_rank.png" style="width:700px;height:1200px;background-color:white">
+<img src="https://github.com/johnwslee/extrucal_machine-learning/blob/main/img/feature_rank.png" style="width:700px;height:400px;background-color:white">
 
 Similarly to actual extrusion processes, `rpm` and `extruder_size` were two biggest processing parameter for the model. The rank for the rest of the processing parameters also made sense.
 
 - #### Effect of Each Processing Parameter on Throughput
 
-<img src="https://github.com/johnwslee/extrucal_machine-learning/blob/main/img/feature_effect.png" style="width:700px;height:1200px;background-color:white">
+<img src="https://github.com/johnwslee/extrucal_machine-learning/blob/main/img/feature_effect.png" style="width:700px;height:400px;background-color:white">
 
 The effect of each processing parameter on the throughput was correctly displayed. For example, the throughput increased with increasing `rpm`, `extruder_size`, `metering_depth`, `screw_pitch`, and `polymer_density`, whereas it decreased with increasing `number_flight` and `flight_width`.
 
