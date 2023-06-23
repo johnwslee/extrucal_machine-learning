@@ -77,6 +77,22 @@ There are clear disparities between the throughputs predicted by the model and t
 
 When the two cases were compared using `mean_absolute_percentage_error`, it was 1.14% for the `extruder_size` present in Train Data, whereas it was 6.92% for the `extruder_size` that were not in Train Data.
 
+### 2.6. Feature Importances 
+
+In order to find out if the machine learning model correctly learned the effect of each extrusion parameter on the throughput, the feature importances of a machine learning model were investigated by using `shap` library. Just to save the computation time, the optimized `LightGBM` model (whose optimization process is shown in Appendix 2) was used to check the feature importances.
+
+- #### Rank of Features
+
+<img src="https://github.com/johnwslee/extrucal_machine-learning/blob/main/img/feature_rank.png" style="width:700px;height:1200px;background-color:white">
+
+Similarly to actual extrusion processes, `rpm` and `extruder_size` were two biggest processing parameter for the model. The rank for the rest of the processing parameters also made sense.
+
+- #### Effect of Each Processing Parameter on Throughput
+
+<img src="https://github.com/johnwslee/extrucal_machine-learning/blob/main/img/feature_effect.png" style="width:700px;height:1200px;background-color:white">
+
+The effect of each processing parameter on the throughput was correctly displayed. For example, the throughput increased with increasing `rpm`, `extruder_size`, `metering_depth`, `screw_pitch`, and `polymer_density`, whereas it decreased with increasing `number_flight` and `flight_width`.
+
 ## 3. Conclusion
 
 In the beginning, this study started with a simple purpose of just demonstrating that machine learning model can learn very complicated pattern and can perform as well as an analytical solution. However, while I was working on modeling, I found out that the model didn't perform well for the smallest extruder (i.e. 25mm). Initially, I thought that it was due to the fact that the throughputs at zero screw RPM were included in the train data. I also suspected that either the log transformation of the throughput might have affected the performance of the model (because the distribution of throughputs after log transformation looked really weird) or the throughputs of the 25mm extruder were just too small to be considered significant by the model. In the end, it was clear that, since `CatBoostRegresser`, which is a tree-based model, was used, the errors for the `extruder_size` that were not included in the train data were higher than those sizes that were included in the train data. 
